@@ -7,11 +7,12 @@ export default function Experience() {
       company: "Zarima Development Private Limited",
       location: "Bangalore",
       status: "COMPLETED",
+      duration: "Internship Program",
       projects: [
         {
-          name: "1. Real-Time WhatsApp Clone",
+          name: "01. Real-Time WhatsApp Clone",
           description:
-            "Developed a full-real-time messaging web application inspired by WhatsApp. Built features from scratch to deliver an interactive and seamless chatting experience.",
+            "Engineered a full-scale real-time messaging web application mirroring WhatsApp, delivering a seamless, responsive, and highly interactive user communication flow.",
           keyPoints: [
             "User Authentication & Profiles: Implemented secure user registration, login, and profile management using JWT and bcrypt.",
             "Real-Time Messaging: Enabled instant, bi-directional messaging using Socket.IO for real-time data flow without page refreshes.",
@@ -29,9 +30,9 @@ export default function Experience() {
           ],
         },
         {
-          name: "2. Library Management System",
+          name: "02. Library Management System",
           description:
-            "Built a full-stack library management application designed to digitalize and streamline library operations efficiently.",
+            "Architected and developed a full-stack library management application designed to completely digitalize and streamline core administrative operations efficiently.",
           keyPoints: [
             "User Authentication: Secure login systems categorized for administrators and members.",
             "Book Management: Complete CRUD operations to add, update, view, and delete books from the library database.",
@@ -52,24 +53,35 @@ export default function Experience() {
   ];
 
   return (
-    <section className="py-20 px-4 max-w-5xl mx-auto text-white">
-      <div className="mb-12">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+    <section className="relative py-24 px-6 max-w-5xl mx-auto text-white bg-black overflow-hidden">
+      {/* Background ambient orange glow for modern touch */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-orange-500/10 blur-[150px] pointer-events-none rounded-full"></div>
+
+      {/* Section Header */}
+      <div className="mb-16 relative z-10">
+        <div className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/30 px-4 py-1.5 rounded-full mb-4">
+          <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+          <span className="text-orange-400 text-xs tracking-widest font-bold uppercase">
+            Professional Journey
+          </span>
+        </div>
+        <h2 className="text-4xl md:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-orange-100 to-orange-500">
           EXPERIENCE
         </h2>
-        <div className="w-20 h-1 bg-white mt-3"></div>
+        <div className="w-28 h-1.5 bg-gradient-to-r from-orange-500 to-transparent mt-4 rounded-full"></div>
       </div>
 
-      <div className="space-y-6">
+      {/* Experience Timeline Container */}
+      <div className="space-y-8 relative z-10">
         {experiences.map((exp, index) => (
           <div key={index} className="relative flex items-center">
-            {/* Left Side Floating Briefcase Icon Box matching screenshot */}
-            <div className="hidden md:flex absolute -left-16 w-12 h-12 rounded-2xl bg-[#0a0a0a] border border-white/20 items-center justify-center text-white shadow-xl backdrop-blur-xl z-10">
+            {/* Floating Briefcase Icon Box */}
+            <div className="hidden md:flex absolute -left-16 w-14 h-14 rounded-2xl bg-zinc-900 border border-orange-500/30 items-center justify-center text-orange-400 shadow-[0_0_20px_rgba(249,115,22,0.2)] backdrop-blur-xl z-10">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth={1.5}
+                strokeWidth={1.8}
                 stroke="currentColor"
                 className="w-6 h-6"
               >
@@ -81,58 +93,63 @@ export default function Experience() {
               </svg>
             </div>
 
-            {/* Main Experience Box */}
-            <div className="w-full bg-[#0a0a0a]/80 border border-white/15 p-6 md:p-8 rounded-2xl backdrop-blur-xl relative hover:border-white/40 transition-all shadow-xl ml-0 md:ml-6">
-              {/* Company & Location Header */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-2 border-b border-white/10 pb-4">
+            {/* Main Experience Card */}
+            <div className="w-full bg-zinc-950/80 border border-white/10 p-6 md:p-10 rounded-3xl backdrop-blur-xl relative hover:border-orange-500/40 transition-all duration-500 shadow-2xl ml-0 md:ml-6 group/card">
+              {/* Company & Role Header */}
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4 border-b border-white/10 pb-6">
                 <div>
-                  <h3 className="text-xl md:text-2xl font-bold">{exp.role}</h3>
-                  <p className="text-gray-300 text-base font-medium mt-1">
-                    {exp.company}
+                  <h3 className="text-2xl md:text-3xl font-bold text-white group-hover/card:text-orange-400 transition-colors">
+                    {exp.role}
+                  </h3>
+                  <p className="text-orange-400/90 text-lg font-semibold mt-1 flex items-center gap-2">
+                    <span>{exp.company}</span>
                   </p>
                 </div>
-                <div className="flex items-center gap-4">
-                  <span className="text-gray-400 text-sm flex items-center gap-1">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="text-zinc-400 text-sm bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full flex items-center gap-1.5">
                     📍 {exp.location}
                   </span>
-                  <span className="text-xs bg-green-500/10 border border-green-500/30 text-green-400 px-3 py-1 rounded-full font-medium">
+                  <span className="text-xs bg-orange-500/10 border border-orange-500/30 text-orange-400 px-4 py-1.5 rounded-full font-bold tracking-wider shadow-[0_0_10px_rgba(249,115,22,0.15)]">
                     {exp.status}
                   </span>
                 </div>
               </div>
 
               {/* Projects Breakdown */}
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {exp.projects.map((project, pIndex) => (
                   <div
                     key={pIndex}
-                    className="bg-white/5 border border-white/15 p-5 rounded-xl transition-all duration-300 hover:bg-white/10 hover:border-white/50 hover:shadow-[0_0_25px_rgba(255,255,255,0.15)] cursor-pointer group"
+                    className="bg-zinc-900/50 border border-white/10 p-6 rounded-2xl transition-all duration-300 hover:bg-zinc-900 hover:border-orange-500/30 hover:shadow-[0_0_25px_rgba(249,115,22,0.1)] group/project"
                   >
-                    <h4 className="text-lg md:text-xl font-semibold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                    <h4 className="text-xl font-bold text-white mb-2 group-hover/project:text-orange-300 transition-colors flex items-center gap-2">
                       {project.name}
                     </h4>
-                    <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-4">
+                    <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-5">
                       {project.description}
                     </p>
 
                     {/* Key Features List */}
-                    <ul className="list-disc list-inside space-y-1.5 text-gray-400 text-sm mb-4">
+                    <ul className="space-y-2 text-zinc-300 text-sm mb-6 bg-black/30 p-4 rounded-xl border border-white/5">
                       {project.keyPoints.map((point, ptIndex) => (
-                        <li key={ptIndex}>
-                          <span className="text-gray-200">
-                            {point.split(":")[0]}:
-                          </span>{" "}
-                          {point.split(":")[1]}
+                        <li key={ptIndex} className="flex items-start gap-2">
+                          <span className="text-orange-500 mt-1">▸</span>
+                          <span>
+                            <strong className="text-white font-semibold">
+                              {point.split(":")[0]}:
+                            </strong>
+                            {point.split(":")[1]}
+                          </span>
                         </li>
                       ))}
                     </ul>
 
                     {/* Tech Stack Tags */}
-                    <div className="flex flex-wrap gap-2 pt-2 border-t border-white/10">
+                    <div className="flex flex-wrap gap-2 pt-3 border-t border-white/10">
                       {project.tags.map((tag, tIndex) => (
                         <span
                           key={tIndex}
-                          className="text-xs bg-white/10 text-gray-200 px-3 py-1 rounded-md group-hover:bg-white/20 transition-colors"
+                          className="text-xs bg-orange-500/10 border border-orange-500/20 text-orange-300 px-3.5 py-1 rounded-md font-medium group-hover/project:bg-orange-500/20 transition-colors"
                         >
                           {tag}
                         </span>
