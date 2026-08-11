@@ -25,168 +25,168 @@ body::before {
   background-image:
     radial-gradient(
       circle at 2% 10%,
-      rgba(255, 255, 255, 0.9) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.95) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 5% 45%,
-      rgba(255, 255, 255, 0.6) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.75) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 8% 85%,
-      rgba(255, 255, 255, 0.8) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.9) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 11% 25%,
-      rgba(255, 255, 255, 0.5) 0 2px,
-      transparent 3px
+      rgba(255, 255, 255, 0.65) 0 2.5px,
+      transparent 4px
     ),
     radial-gradient(
       circle at 14% 65%,
-      rgba(255, 255, 255, 0.9) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.95) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 17% 15%,
-      rgba(255, 255, 255, 0.7) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.8) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 20% 90%,
-      rgba(255, 255, 255, 0.4) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.55) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 23% 35%,
-      rgba(255, 255, 255, 0.85) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.9) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 26% 75%,
-      rgba(255, 255, 255, 0.6) 0 2px,
-      transparent 3px
+      rgba(255, 255, 255, 0.7) 0 2.5px,
+      transparent 4px
     ),
     radial-gradient(
       circle at 29% 5%,
-      rgba(255, 255, 255, 0.9) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.95) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 32% 55%,
-      rgba(255, 255, 255, 0.5) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.65) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 35% 80%,
-      rgba(255, 255, 255, 0.75) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.85) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 38% 20%,
-      rgba(255, 255, 255, 0.65) 0 2px,
-      transparent 3px
+      rgba(255, 255, 255, 0.75) 0 2.5px,
+      transparent 4px
     ),
     radial-gradient(
       circle at 41% 50%,
-      rgba(255, 255, 255, 0.9) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.95) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 44% 95%,
-      rgba(255, 255, 255, 0.45) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.6) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 47% 30%,
-      rgba(255, 255, 255, 0.8) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.9) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 50% 70%,
-      rgba(255, 255, 255, 0.55) 0 2px,
-      transparent 3px
+      rgba(255, 255, 255, 0.7) 0 2.5px,
+      transparent 4px
     ),
     radial-gradient(
       circle at 53% 10%,
-      rgba(255, 255, 255, 0.7) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.8) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 56% 40%,
-      rgba(255, 255, 255, 0.9) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.95) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 59% 85%,
-      rgba(255, 255, 255, 0.6) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.7) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 62% 25%,
-      rgba(255, 255, 255, 0.8) 0 2px,
-      transparent 3px
+      rgba(255, 255, 255, 0.9) 0 2.5px,
+      transparent 4px
     ),
     radial-gradient(
       circle at 65% 60%,
-      rgba(255, 255, 255, 0.5) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.65) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 68% 90%,
-      rgba(255, 255, 255, 0.85) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.9) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 71% 15%,
-      rgba(255, 255, 255, 0.65) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.75) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 74% 45%,
-      rgba(255, 255, 255, 0.9) 0 2px,
-      transparent 3px
+      rgba(255, 255, 255, 0.95) 0 2.5px,
+      transparent 4px
     ),
     radial-gradient(
       circle at 77% 75%,
-      rgba(255, 255, 255, 0.45) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.6) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 80% 35%,
-      rgba(255, 255, 255, 0.75) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.85) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 83% 95%,
-      rgba(255, 255, 255, 0.55) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.7) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 86% 20%,
-      rgba(255, 255, 255, 0.8) 0 2px,
-      transparent 3px
+      rgba(255, 255, 255, 0.9) 0 2.5px,
+      transparent 4px
     ),
     radial-gradient(
       circle at 89% 65%,
-      rgba(255, 255, 255, 0.6) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.7) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 92% 10%,
-      rgba(255, 255, 255, 0.9) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.95) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 95% 50%,
-      rgba(255, 255, 255, 0.5) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.65) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 98% 80%,
-      rgba(255, 255, 255, 0.85) 0 2px,
-      transparent 3px
+      rgba(255, 255, 255, 0.9) 0 2.5px,
+      transparent 4px
     );
 
   background-size: 100% 100%;
@@ -210,173 +210,173 @@ body::after {
   background-image:
     radial-gradient(
       circle at 3% 70%,
-      rgba(255, 255, 255, 0.4) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.55) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 6% 20%,
-      rgba(255, 255, 255, 0.7) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.8) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 9% 90%,
-      rgba(255, 255, 255, 0.5) 0 2px,
-      transparent 3px
+      rgba(255, 255, 255, 0.65) 0 2.5px,
+      transparent 4px
     ),
     radial-gradient(
       circle at 12% 40%,
-      rgba(255, 255, 255, 0.8) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.9) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 15% 10%,
-      rgba(255, 255, 255, 0.6) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.7) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 18% 60%,
-      rgba(255, 255, 255, 0.45) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.6) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 21% 30%,
-      rgba(255, 255, 255, 0.75) 0 2px,
-      transparent 3px
+      rgba(255, 255, 255, 0.85) 0 2.5px,
+      transparent 4px
     ),
     radial-gradient(
       circle at 24% 80%,
-      rgba(255, 255, 255, 0.55) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.7) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 27% 50%,
-      rgba(255, 255, 255, 0.9) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.95) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 30% 15%,
-      rgba(255, 255, 255, 0.4) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.55) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 33% 75%,
-      rgba(255, 255, 255, 0.65) 0 2px,
-      transparent 3px
+      rgba(255, 255, 255, 0.8) 0 2.5px,
+      transparent 4px
     ),
     radial-gradient(
       circle at 36% 35%,
-      rgba(255, 255, 255, 0.5) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.65) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 39% 95%,
-      rgba(255, 255, 255, 0.8) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.9) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 42% 25%,
-      rgba(255, 255, 255, 0.6) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.75) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 45% 65%,
-      rgba(255, 255, 255, 0.85) 0 2px,
-      transparent 3px
+      rgba(255, 255, 255, 0.95) 0 2.5px,
+      transparent 4px
     ),
     radial-gradient(
       circle at 48% 5%,
-      rgba(255, 255, 255, 0.45) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.6) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 51% 45%,
-      rgba(255, 255, 255, 0.7) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.8) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 54% 85%,
-      rgba(255, 255, 255, 0.5) 0 2px,
-      transparent 3px
+      rgba(255, 255, 255, 0.65) 0 2.5px,
+      transparent 4px
     ),
     radial-gradient(
       circle at 57% 20%,
-      rgba(255, 255, 255, 0.8) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.9) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 60% 55%,
-      rgba(255, 255, 255, 0.6) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.75) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 63% 90%,
-      rgba(255, 255, 255, 0.4) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.55) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 66% 15%,
-      rgba(255, 255, 255, 0.75) 0 2px,
-      transparent 3px
+      rgba(255, 255, 255, 0.85) 0 2.5px,
+      transparent 4px
     ),
     radial-gradient(
       circle at 69% 70%,
-      rgba(255, 255, 255, 0.55) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.7) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 72% 40%,
-      rgba(255, 255, 255, 0.9) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.95) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 75% 10%,
-      rgba(255, 255, 255, 0.45) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.6) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 78% 60%,
-      rgba(255, 255, 255, 0.7) 0 2px,
-      transparent 3px
+      rgba(255, 255, 255, 0.8) 0 2.5px,
+      transparent 4px
     ),
     radial-gradient(
       circle at 81% 95%,
-      rgba(255, 255, 255, 0.5) 0 1px,
-      transparent 2px
-    ),
-    radial-gradient(
-      circle at 84% 30%,
-      rgba(255, 255, 255, 0.8) 0 1.5px,
-      transparent 2.5px
-    ),
-    radial-gradient(
-      circle at 87% 75%,
-      rgba(255, 255, 255, 0.6) 0 1px,
-      transparent 2px
-    ),
-    radial-gradient(
-      circle at 90% 20%,
-      rgba(255, 255, 255, 0.85) 0 2px,
+      rgba(255, 255, 255, 0.65) 0 1.5px,
       transparent 3px
     ),
     radial-gradient(
+      circle at 84% 30%,
+      rgba(255, 255, 255, 0.9) 0 2px,
+      transparent 3.5px
+    ),
+    radial-gradient(
+      circle at 87% 75%,
+      rgba(255, 255, 255, 0.7) 0 1.5px,
+      transparent 3px
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(255, 255, 255, 0.95) 0 2.5px,
+      transparent 4px
+    ),
+    radial-gradient(
       circle at 93% 50%,
-      rgba(255, 255, 255, 0.5) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.65) 0 1.5px,
+      transparent 3px
     ),
     radial-gradient(
       circle at 96% 85%,
-      rgba(255, 255, 255, 0.75) 0 1.5px,
-      transparent 2.5px
+      rgba(255, 255, 255, 0.85) 0 2px,
+      transparent 3.5px
     ),
     radial-gradient(
       circle at 99% 5%,
-      rgba(255, 255, 255, 0.4) 0 1px,
-      transparent 2px
+      rgba(255, 255, 255, 0.55) 0 1.5px,
+      transparent 3px
     );
 
   background-size: 100% 100%;
   animation: starsMoveSlow 55s linear infinite;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 /* Left → Right movement animations */
@@ -455,4 +455,75 @@ p {
   margin-inline-start: 0;
   margin-inline-end: 0;
   unicode-bidi: isolate;
+}
+
+/* 1. Global Reset & Overflow Protection for All Devices */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%; /* Prevents iOS text scaling bug */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* 2. Global Media Fix */
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 3. Main App Container Wrapper */
+.app {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==========================================
+   4. Custom Media Queries for Mobile & Tablets
+   ========================================== */
+
+/* For Mobile Devices (Phones up to 768px width like iPhone & Android) */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  /* Adjust container paddings automatically on mobile */
+  .max-w-5xl,
+  .max-w-6xl,
+  .max-w-7xl {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* For Small iPhones / SE (Width below 400px) */
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
 }

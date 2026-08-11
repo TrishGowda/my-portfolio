@@ -1,302 +1,145 @@
-import React, { useEffect, useRef, useState } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
+import React, { useState, useEffect, useCallback } from "react";
+import Particles from "react-particles";
+import { loadSlim } from "tsparticles-slim";
 
-/* =========================================================
-   PARTICLE BACKGROUND
-   ========================================================= */
-const ParticleBackground = () => {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-
-    let animationFrameId;
-
-    let width = (canvas.width = canvas.parentElement.offsetWidth);
-    let height = (canvas.height = canvas.parentElement.offsetHeight);
-
-    /* Resize */
-    const handleResize = () => {
-      if (!canvas.parentElement) return;
-
-      width = canvas.width = canvas.parentElement.offsetWidth;
-      height = canvas.height = canvas.parentElement.offsetHeight;
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    /* More dots */
-    const particleCount = window.innerWidth < 768 ? 80 : 160;
-
-    const particles = [];
-
-    let clickMultiplier = 1;
-
-    /* =====================================================
-       PARTICLE
-       ===================================================== */
-    class Particle {
-      constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-
-        this.vx = (Math.random() - 0.5) * 0.8;
-        this.vy = (Math.random() - 0.5) * 0.8;
-
-        this.radius = Math.random() * 1.8 + 0.7;
-      }
-
-      update() {
-        this.x += this.vx * clickMultiplier;
-        this.y += this.vy * clickMultiplier;
-
-        /* Left / Right */
-        if (this.x < 0) {
-          this.x = width;
-        }
-
-        if (this.x > width) {
-          this.x = 0;
-        }
-
-        /* Top / Bottom */
-        if (this.y < 0) {
-          this.y = height;
-        }
-
-        if (this.y > height) {
-          this.y = 0;
-        }
-      }
-
-      draw() {
-        ctx.beginPath();
-
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-
-        ctx.fillStyle = "#d97706";
-
-        ctx.fill();
-      }
-    }
-
-    /* Create particles */
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-
-    /* =====================================================
-       CLICK EFFECT
-       ===================================================== */
-    const handleClick = () => {
-      clickMultiplier = 0.15;
-
-      setTimeout(() => {
-        clickMultiplier = 2.5;
-
-        setTimeout(() => {
-          clickMultiplier = 1;
-        }, 500);
-      }, 300);
-    };
-
-    canvas.addEventListener("click", handleClick);
-
-    /* =====================================================
-       ANIMATION
-       ===================================================== */
-    const animate = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      particles.forEach((particle, index) => {
-        particle.update();
-        particle.draw();
-
-        /* Connect nearby dots */
-        for (let j = index + 1; j < particles.length; j++) {
-          const particle2 = particles[j];
-
-          const dx = particle.x - particle2.x;
-          const dy = particle.y - particle2.y;
-
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 120) {
-            ctx.beginPath();
-
-            ctx.moveTo(particle.x, particle.y);
-
-            ctx.lineTo(particle2.x, particle2.y);
-
-            ctx.strokeStyle = `rgba(217, 119, 6, ${1 - distance / 120})`;
-
-            ctx.lineWidth = 0.5;
-
-            ctx.stroke();
-          }
-        }
-      });
-
-      animationFrameId = requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    /* Cleanup */
-    return () => {
-      window.removeEventListener("resize", handleResize);
-
-      canvas.removeEventListener("click", handleClick);
-
-      cancelAnimationFrame(animationFrameId);
-    };
+export default function Hero() {
+  const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine);
   }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        pointerEvents: "auto",
-        zIndex: 0,
-      }}
-    />
-  );
-};
-
-/* =========================================================
-   HERO
-   ========================================================= */
-export default function Hero({ onContactClick }) {
-  /* Roles */
+  // Roles array for the typing animation effect
   const roles = [
-    "I AM A FULL STACK DEVELOPER",
-    "I AM A WEB DEVELOPER",
-    "I AM A FRONTEND DEVELOPER",
-    "I AM A BACKEND DEVELOPER",
+    "I am a Full Stack Developer",
+    "I am a Frontend Developer",
+    "I am a Backend Developer",
+    "I am a Web Developer",
+    "I am a Problem Solver",
   ];
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150);
 
-  /* Change role every 2.8 seconds */
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRoleIndex(
-        (previousIndex) => (previousIndex + 1) % roles.length,
-      );
-    }, 2800);
+    const fullText = roles[currentRoleIndex];
 
-    return () => clearInterval(interval);
-  }, [roles.length]);
+    const handleTyping = () => {
+      if (!isDeleting) {
+        setCurrentText(fullText.substring(0, currentText.length + 1));
+        if (currentText === fullText) {
+          setTimeout(() => setIsDeleting(true), 2000); // Pause before deleting
+        }
+      } else {
+        setCurrentText(fullText.substring(0, currentText.length - 1));
+        if (currentText === "") {
+          setIsDeleting(false);
+          setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+        }
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentRoleIndex]);
 
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen w-full overflow-hidden bg-black flex flex-col items-center justify-between px-6 py-6"
-    >
-      {/* =================================================
-          PARTICLE BACKGROUND
-          ================================================= */}
-      <ParticleBackground />
+    <section className="relative w-full h-screen bg-black flex flex-col justify-between items-center overflow-hidden px-6 py-8">
+      {/* Super Extra Particle Background Animation */}
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={{
+          fullScreen: { enable: false },
+          particles: {
+            number: { value: 100 },
+            color: { value: "#f97316" },
+            links: {
+              color: "#f97316",
+              distance: 130,
+              enable: true,
+              opacity: 0.5,
+              width: 1.2,
+            },
+            move: { enable: true, speed: 2 },
+            size: { value: 3 },
+          },
+          interactivity: {
+            events: {
+              onHover: { enable: true, mode: "grab" },
+              onClick: { enable: true, mode: "push" },
+            },
+            modes: {
+              grab: { distance: 200, links: { opacity: 1 } },
+              push: { quantity: 4 },
+            },
+          },
+        }}
+        className="absolute inset-0 z-0 pointer-events-auto"
+      />
 
-      {/* =================================================
-          TOP RIGHT BUTTONS
-          ================================================= */}
-      <div className="relative z-10 w-full max-w-7xl flex justify-end items-center">
-        <div className="flex gap-4">
-          {/* CONTACT */}
-          <button
-            onClick={onContactClick}
-            className="px-6 py-2 rounded-full border border-white/20 bg-black/80 hover:bg-white hover:text-black transition-all duration-300 text-sm font-medium tracking-wider text-white cursor-pointer"
+      {/* Top Navbar */}
+      <div className="w-full max-w-7xl flex justify-between items-center z-10">
+        <h1 className="text-white font-extrabold tracking-wider text-xl">
+          TRISHA MS
+        </h1>
+        <div className="flex items-center gap-4">
+          <a
+            href="mailto:your-email@example.com"
+            className="border border-orange-500/50 text-white px-5 py-2 rounded-full text-sm tracking-widest hover:bg-orange-500 hover:text-black transition-all duration-300"
           >
             CONTACT
-          </button>
-
-          {/* RESUME */}
+          </a>
           <a
             href="/resume.pdf"
             target="_blank"
-            rel="noreferrer"
-            className="px-6 py-2 rounded-full bg-white text-black hover:bg-gray-200 transition-all duration-300 text-sm font-medium tracking-wider"
+            rel="noopener noreferrer"
+            className="bg-orange-500 text-black px-6 py-2 rounded-full text-sm font-bold tracking-wider hover:bg-orange-400 transition-all duration-300 shadow-[0_0_15px_rgba(249,115,22,0.4)]"
           >
             RESUME
           </a>
         </div>
       </div>
 
-      {/* =================================================
-          CENTER CONTENT
-          ================================================= */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center my-auto">
-        {/* ROLE */}
-        <div className="mb-5 h-8 flex items-center justify-center">
-          <p className="text-gray-300 tracking-[0.3em] text-xs sm:text-sm md:text-base uppercase font-semibold transition-all duration-500">
-            {roles[currentRoleIndex]}
-          </p>
+      {/* Center Grand Content */}
+      <div className="text-center z-10 flex flex-col items-center max-w-4xl">
+        {/* Dynamic Typing Role Box */}
+        <div className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/30 px-6 py-2.5 rounded-full mb-6 backdrop-blur-md shadow-[0_0_20px_rgba(249,115,22,0.2)]">
+          <span className="w-2.5 h-2.5 rounded-full bg-orange-500 animate-ping"></span>
+          <span className="text-orange-400 text-sm md:text-base tracking-[0.1em] font-bold min-h-[24px]">
+            {currentText}
+            <span className="animate-pulse">|</span>
+          </span>
         </div>
 
-        {/* =================================================
-            ONLY ONE NAME
-            ================================================= */}
-        <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-widest mb-8 text-white">
+        {/* Main Glowing Name */}
+        <h1 className="text-5xl md:text-8xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-white via-orange-200 to-orange-500 uppercase mb-6 drop-shadow-[0_0_40px_rgba(249,115,22,0.4)]">
           TRISHA MS
         </h1>
 
-        {/* =================================================
-            SOCIAL LINKS
-            ================================================= */}
-        <div className="flex gap-4">
-          {/* GitHub */}
-          <a
-            href="https://github.com/TrishGowda"
-            target="_blank"
-            rel="noreferrer"
-            className="p-3.5 glass-card hover:bg-gray-800 hover:text-purple-400 rounded-full transition-all duration-300 text-white flex items-center justify-center"
-            title="GitHub"
-          >
-            <FaGithub size={18} />
-          </a>
+        {/* Description */}
+        <p className="text-zinc-400 text-sm md:text-base tracking-wide max-w-xl mb-8">
+          Building powerful end-to-end applications, real-time architectures,
+          and exceptional digital user experiences with modern tech stacks.
+        </p>
 
-          {/* LinkedIn */}
+        {/* Let's Talk Button Only */}
+        <div className="flex items-center justify-center">
           <a
-            href="https://www.linkedin.com/in/thrisa-ms-351967399/"
-            target="_blank"
-            rel="noreferrer"
-            className="p-3.5 glass-card hover:bg-blue-900 hover:text-blue-400 rounded-full transition-all duration-300 text-white flex items-center justify-center"
-            title="LinkedIn"
+            href="mailto:your-email@example.com"
+            className="bg-orange-500 text-black font-extrabold px-10 py-4 rounded-full text-sm tracking-wider hover:bg-orange-400 transition-all duration-300 shadow-[0_0_25px_rgba(249,115,22,0.5)] hover:scale-105"
           >
-            <FaLinkedin size={18} />
-          </a>
-
-          {/* LeetCode */}
-          <a
-            href="https://leetcode.com/u/trish_gowda/"
-            target="_blank"
-            rel="noreferrer"
-            className="p-3.5 glass-card hover:bg-[#1a1a1a] hover:text-[#FFA116] rounded-full transition-all duration-300 text-white flex items-center justify-center"
-            title="LeetCode"
-          >
-            <SiLeetcode size={18} />
+            LET'S TALK 💬
           </a>
         </div>
       </div>
 
-      {/* =================================================
+      {/* Bottom Scroll Indicator */}
+      <div className="z-10 flex flex-col items-center gap-1 opacity-70 hover:opacity-100 transition-opacity cursor-pointer">
+        <span className="text-[10px] tracking-[0.2em] text-zinc-400">
           SCROLL
-          ================================================= */}
-      <div className="relative z-10 flex flex-col items-center pb-2 text-gray-400 text-xs tracking-[0.2em]">
-        <span className="mb-1">SCROLL</span>
-
-        <span className="animate-bounce">↓</span>
+        </span>
+        <span className="text-orange-500 text-sm animate-bounce">↓</span>
       </div>
     </section>
   );

@@ -21,7 +21,7 @@ export default function Footer({ setCurrentView }) {
         {/* Column 1: Brand Info & Socials */}
         <div>
           <h3 className="text-xl font-bold mb-4 tracking-wider">
-            &lt;THRISA MS /&gt;
+            &lt;TRISHA MS /&gt;
           </h3>
           <p className="text-gray-400 text-sm leading-relaxed mb-6 pr-4">
             Full Stack Developer specializing in clean code, AI-driven
@@ -92,7 +92,7 @@ export default function Footer({ setCurrentView }) {
       {/* Bottom Bar: Copyright & Back to Top */}
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-xs text-gray-500">
         <p className="mb-4 md:mb-0">
-          © {new Date().getFullYear()} THRISA MS. All rights reserved.
+          © {new Date().getFullYear()} TRISHA MS. All rights reserved.
         </p>
         <button
           onClick={scrollToTop}

@@ -50,10 +50,10 @@ export default function Expertise() {
     <section className="py-24 px-6 max-w-5xl mx-auto relative overflow-hidden text-center">
       {/* Section Heading */}
       <div className="mb-14 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-wider text-white mb-3 uppercase">
+        <h2 className="text-3xl md:text-4xl font-extrabold tracking-wider text-white mb-3 uppercase drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
           MY EXPERTISE
         </h2>
-        <div className="w-16 h-1 bg-white mx-auto"></div>
+        <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-white mx-auto rounded-full"></div>
       </div>
 
       {/* Expertise Card Container with Navigation Arrows */}
@@ -62,21 +62,21 @@ export default function Expertise() {
         {/* Left Arrow Button */}
         <button 
           onClick={prevSlide}
-          className="absolute left-0 md:-left-6 z-20 bg-black/60 border border-white/20 text-white p-3 rounded-full hover:bg-white/20 transition-all duration-300"
+          className="absolute left-0 md:-left-6 z-20 bg-black/80 border border-white/20 text-white p-3.5 rounded-full hover:bg-orange-500 hover:border-orange-500 hover:text-black transition-all duration-300 shadow-lg cursor-pointer"
           aria-label="Previous Expertise"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
           </svg>
         </button>
 
         {/* Card Box matching screenshot */}
-        <div className="w-full max-w-3xl bg-[#0a0a0a]/80 border border-white/15 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl mx-12">
-          <h3 className="text-2xl md:text-3xl font-bold tracking-wide text-white mb-4 uppercase">
+        <div className="w-full max-w-3xl bg-[#0a0a0a]/90 border border-white/20 backdrop-blur-2xl rounded-3xl p-8 md:p-12 shadow-[0_0_50px_rgba(0,0,0,0.9)] mx-12 transition-all duration-500">
+          <h3 className="text-2xl md:text-3xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-white via-orange-200 to-orange-400 mb-4 uppercase">
             {currentItem.title}
           </h3>
           
-          <p className="text-gray-300 text-base md:text-lg max-w-xl mx-auto mb-8 leading-relaxed font-sans">
+          <p className="text-gray-300 text-base md:text-lg max-w-xl mx-auto mb-8 leading-relaxed font-sans transition-opacity duration-300">
             {currentItem.description}
           </p>
 
@@ -85,10 +85,24 @@ export default function Expertise() {
             {currentItem.tags.map((tag, index) => (
               <span 
                 key={index} 
-                className="px-4 py-1.5 text-sm font-medium text-gray-200 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors"
+                className="px-4 py-1.5 text-sm font-semibold text-gray-200 bg-white/5 border border-white/15 rounded-full hover:bg-orange-500 hover:text-black hover:border-orange-500 transition-all duration-300 shadow-sm"
               >
                 {tag}
               </span>
+            ))}
+          </div>
+
+          {/* Pagination Indicator Dots */}
+          <div className="flex items-center justify-center gap-2 mt-8">
+            {expertiseData.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  currentIndex === idx ? 'w-8 bg-orange-500' : 'w-2 bg-white/20 hover:bg-white/40'
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
             ))}
           </div>
         </div>
@@ -96,10 +110,10 @@ export default function Expertise() {
         {/* Right Arrow Button */}
         <button 
           onClick={nextSlide}
-          className="absolute right-0 md:-right-6 z-20 bg-black/60 border border-white/20 text-white p-3 rounded-full hover:bg-white/20 transition-all duration-300"
+          className="absolute right-0 md:-right-6 z-20 bg-black/80 border border-white/20 text-white p-3.5 rounded-full hover:bg-orange-500 hover:border-orange-500 hover:text-black transition-all duration-300 shadow-lg cursor-pointer"
           aria-label="Next Expertise"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
           </svg>
         </button>

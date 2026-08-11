@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ContactForm() {
+export default function Projects() {
   const projects = [
     {
       category: "FULL-STACK CHAT",
@@ -48,31 +48,37 @@ export default function ContactForm() {
       description:
         "A full-stack library management application developed using the MERN Stack to manage library operations efficiently, including user authentication, book management, issue/return tracking, and dashboards.",
       tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT"],
-      link: "#",
+      link: "https://library-management-system-ruddy-five.vercel.app/",
     },
   ];
 
   return (
     <section
       id="projects-section"
-      className="py-20 px-4 max-w-7xl mx-auto text-white scroll-mt-10"
+      className="py-24 px-6 max-w-7xl mx-auto text-white scroll-mt-10"
     >
-      <div className="mb-12">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+      {/* Section Header */}
+      <div className="mb-14">
+        <h2 className="text-3xl md:text-5xl font-extrabold tracking-wider uppercase text-transparent bg-clip-text bg-gradient-to-r from-white via-orange-100 to-orange-400">
           SELECTED PROJECTS
         </h2>
-        <div className="w-20 h-1 bg-white mt-3"></div>
+        <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-white mt-3 rounded-full"></div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-[#0a0a0a]/80 border border-white/15 p-6 rounded-2xl backdrop-blur-xl flex flex-col justify-between hover:border-white/50 hover:rotate-1 hover:scale-105 transition-all duration-300 shadow-xl cursor-pointer"
+            className="group bg-[#0a0a0a]/90 border border-white/15 p-8 rounded-3xl backdrop-blur-xl flex flex-col justify-between hover:border-orange-500/60 hover:shadow-[0_0_30px_rgba(249,115,22,0.25)] hover:-translate-y-2 transition-all duration-300 cursor-pointer relative overflow-hidden"
           >
+            {/* Background subtle glow on hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
             <div>
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-[10px] uppercase tracking-wider text-gray-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+              {/* Category & Live Link */}
+              <div className="flex justify-between items-center mb-5 relative z-10">
+                <span className="text-[11px] uppercase tracking-widest text-orange-400 bg-orange-500/10 border border-orange-500/20 px-3.5 py-1 rounded-full font-semibold">
                   {project.category}
                 </span>
 
@@ -80,27 +86,31 @@ export default function ContactForm() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/20 hover:border-white/40 transition-all shadow-md group"
+                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/15 flex items-center justify-center text-gray-300 hover:text-black hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 shadow-md"
                   title="View Live Project"
                 >
-                  <span className="text-sm group-hover:scale-110 transition-transform">
+                  <span className="text-base group-hover:scale-110 transition-transform">
                     🌐
                   </span>
                 </a>
               </div>
 
-              <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+              {/* Title & Description */}
+              <h3 className="text-2xl font-bold mb-3 tracking-wide text-white group-hover:text-orange-300 transition-colors relative z-10">
+                {project.title}
+              </h3>
+              <p className="text-gray-400 text-sm md:text-base mb-6 leading-relaxed relative z-10">
                 {project.description}
               </p>
             </div>
 
+            {/* Tech Tags */}
             {project.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2 pt-2">
+              <div className="flex flex-wrap gap-2 pt-2 relative z-10">
                 {project.tags.map((tag, tIndex) => (
                   <span
                     key={tIndex}
-                    className="text-xs bg-white/10 text-gray-200 px-3 py-1 rounded-md"
+                    className="text-xs font-medium bg-white/5 text-gray-300 border border-white/10 px-3.5 py-1.5 rounded-lg group-hover:border-orange-500/30 group-hover:text-orange-200 transition-colors"
                   >
                     {tag}
                   </span>

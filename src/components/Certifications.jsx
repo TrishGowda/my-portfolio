@@ -1,124 +1,111 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 export default function Certifications() {
-  const [zoomedIndex, setZoomedIndex] = useState(null);
-
-  const certList = [
+  const certificationsData = [
     {
       title: "Full Stack Development",
-      issuer: "Zaliama Development Pvt Ltd",
-      date: "2026",
+      issuer: "Zallama Development Pvt Ltd",
+      year: "2026",
       status: "COMPLETED",
-      badgeColor:
-        "bg-emerald-950/80 border-emerald-500/50 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.2)]",
+      statusColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/30",
     },
     {
       title: "Certified Java Developer",
       issuer: "Professional Certification | 2025",
-      date: "License: JDAC@230045CKD007921DC.kzP5531",
+      license: "License: JDAC@230045CKD007921DC.kzP5531",
       status: "LIFETIME VALIDITY",
-      badgeColor:
-        "bg-blue-950/80 border-blue-500/50 text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.2)]",
+      statusColor: "text-sky-400 bg-sky-500/10 border-sky-500/30",
     },
     {
       title: "Prompt Engineering",
       issuer: "AI & Development Course",
-      date: "2025 - 2026",
+      year: "2025 - 2026",
       status: "VALUE ADDED",
-      badgeColor:
-        "bg-purple-950/80 border-purple-500/50 text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.2)]",
+      statusColor: "text-purple-400 bg-purple-500/10 border-purple-500/30",
     },
     {
       title: "Certified SQL",
       issuer: "Database Management",
-      date: "2026",
+      year: "2026",
       status: "COMPLETED",
-      badgeColor:
-        "bg-amber-950/80 border-amber-500/50 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.2)]",
+      statusColor: "text-orange-400 bg-orange-500/10 border-orange-500/30",
     },
     {
       title: "Trained AWS",
       issuer: "Amazon Web Services",
-      date: "2026",
+      year: "2026",
       status: "TRAINED",
-      badgeColor:
-        "bg-orange-950/80 border-orange-500/50 text-orange-400 shadow-[0_0_15px_rgba(249,115,22,0.2)]",
+      statusColor: "text-amber-400 bg-amber-500/10 border-amber-500/30",
     },
     {
       title: "GitHub Certification",
       issuer: "Version Control & Collaboration",
-      date: "2026",
+      year: "2026",
       status: "VERIFIED CERTIFIED",
-      badgeColor:
-        "bg-cyan-950/80 border-cyan-500/50 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.2)]",
+      statusColor: "text-cyan-400 bg-cyan-500/10 border-cyan-500/30",
     },
   ];
 
-  // Click outside to zoom out / reset
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (!e.target.closest(".cert-card")) {
-        setZoomedIndex(null);
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
-
-  const handleCardClick = (index, e) => {
-    e.stopPropagation();
-    setZoomedIndex(zoomedIndex === index ? null : index);
-  };
-
   return (
-    <section className="py-20 px-4 max-w-6xl mx-auto text-white">
-      <div className="mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+    <section className="py-24 px-6 max-w-7xl mx-auto relative overflow-hidden text-white">
+      {/* Section Heading */}
+      <div className="mb-16 text-center">
+        <h2 className="text-3xl md:text-5xl font-extrabold tracking-wider uppercase text-transparent bg-clip-text bg-gradient-to-r from-white via-orange-100 to-orange-400">
           CERTIFICATIONS
         </h2>
-        <div className="w-20 h-1 bg-gray-500 mt-3"></div>
+        <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-white mx-auto mt-3 rounded-full"></div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {certList.map((cert, index) => {
-          const isZoomed = zoomedIndex === index;
-          return (
-            <div
-              key={index}
-              onClick={(e) => handleCardClick(index, e)}
-              className={`cert-card bg-[#121212] border p-6 rounded-2xl backdrop-blur-xl relative cursor-pointer transition-all duration-500 ease-in-out flex flex-col justify-between ${
-                isZoomed
-                  ? "scale-105 border-gray-400 shadow-[0_0_30px_rgba(156,163,175,0.2)] z-20"
-                  : "border-gray-800 hover:border-gray-600 hover:shadow-[0_0_20px_rgba(156,163,175,0.1)]"
-              }`}
-            >
-              <div>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-gray-400 text-lg">✦</span>
-                  <h3
-                    className={`text-xl font-bold transition-colors ${isZoomed ? "text-gray-200" : "text-gray-100"}`}
-                  >
-                    {cert.title}
-                  </h3>
-                </div>
-                <p className="text-gray-400 text-sm font-medium mb-2">
-                  {cert.issuer}
-                </p>
-                <p className="text-xs text-gray-500 font-mono mb-4 break-all">
-                  {cert.date}
-                </p>
+      {/* Certifications Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {certificationsData.map((cert, index) => (
+          <div
+            key={index}
+            className="group bg-[#0a0a0a]/90 border border-white/15 p-7 rounded-3xl backdrop-blur-xl shadow-[0_0_30px_rgba(0,0,0,0.8)] hover:border-orange-500/60 hover:shadow-[0_0_35px_rgba(249,115,22,0.2)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+          >
+            {/* Background Glow on Hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
+            <div>
+              {/* Title with Star Icon */}
+              <div className="flex items-start gap-2.5 mb-3">
+                <span className="text-orange-400 text-sm mt-1">✦</span>
+                <h3 className="text-xl font-bold text-white tracking-wide group-hover:text-orange-300 transition-colors">
+                  {cert.title}
+                </h3>
               </div>
 
-              <div>
-                <span
-                  className={`text-xs border px-3 py-1 rounded-full font-semibold inline-block ${cert.badgeColor}`}
-                >
-                  {cert.status}
-                </span>
-              </div>
+              {/* Issuer / Description */}
+              <p className="text-gray-300 text-sm mb-2 font-medium">
+                {cert.issuer}
+              </p>
+
+              {/* License if available */}
+              {cert.license && (
+                <p className="text-gray-500 text-[11px] mb-4 break-all font-mono">
+                  {cert.license}
+                </p>
+              )}
+
+              {/* Year if available */}
+              {cert.year && !cert.license && (
+                <p className="text-gray-400 text-xs mb-6">{cert.year}</p>
+              )}
             </div>
-          );
-        })}
+
+            {/* Status Badge */}
+            <div className="pt-4 border-t border-white/10 flex items-center justify-between mt-4">
+              <span
+                className={`text-[10px] font-bold tracking-wider px-3.5 py-1.5 rounded-full border ${cert.statusColor} shadow-sm`}
+              >
+                {cert.status}
+              </span>
+              {cert.year && cert.license && (
+                <span className="text-xs text-gray-400 font-medium">2025</span>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

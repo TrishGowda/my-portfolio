@@ -13,7 +13,7 @@ export default function Navbar({ setCurrentView }) {
           }}
           className="text-white font-bold text-lg tracking-wider cursor-pointer"
         >
-          &lt;THRISA MS /&gt;
+          THRISA MS 
         </div>
 
         {/* Right Corner Buttons: Contact & Resume */}

@@ -1,42 +1,52 @@
 import React from 'react';
 
-
 export default function About() {
   return (
     <section className="pt-24 pb-20 px-6 max-w-6xl mx-auto relative overflow-hidden">
-      {/* Centered Heading */}
       <div className="text-center mb-12 relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-white mb-3 uppercase">
           About Me
         </h2>
-        <div className="w-16 h-1 bg-white mx-auto"></div>
+        <div className="w-16 h-1 bg-yellow-500 mx-auto"></div>
       </div>
 
-      {/* Main Content Layout - items-stretch aligns image top & bottom directly with text box */}
-      <div className="flex flex-col md:flex-row items-stretch gap-8 relative z-10 about-content">
+      <div className="flex flex-col md:flex-row items-stretch gap-10 relative z-10">
         
-        {/* Profile Image - Exactly matches text box height from start to finish */}
-        <div className="w-full md:w-1/3 flex">
-          <div className="p-2 rounded-2xl shadow-2xl bg-black/50 border border-white/10 backdrop-blur-md w-full flex overflow-hidden">
+        {/* Profile Image Column - With Zoom Effect */}
+        <div className="w-full md:w-1/3 relative flex">
+           {/* Added overflow-hidden to contain the zoom effect */}
+           <div className="w-full relative rounded-2xl overflow-hidden border-2 border-yellow-500/30 shadow-[0_0_30px_rgba(234,179,8,0.15)] group cursor-pointer">
+            
+            {/* Image with Zoom effect */}
             <img
               src="/profile.jpg"
-              alt="Jaswanth MG"
-              className="rounded-xl w-full h-full object-cover transition-transform duration-500 hover:scale-105 cursor-pointer"
+              alt="Thrisa MS"
+              className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
             />
-          </div>
+            
+            {/* Badges remain unaffected by image zoom */}
+            <div className="absolute top-4 left-4 bg-yellow-500/90 backdrop-blur-md px-4 py-1.5 rounded-lg text-xs font-bold text-black flex items-center gap-2">
+               <span>⚡</span> Problem Solver
+            </div>
+
+            <div className="absolute bottom-16 left-4 bg-black/70 backdrop-blur-md px-4 py-1.5 rounded-lg border border-yellow-500/50 text-xs font-medium text-white flex items-center gap-2">
+               <span>💡</span> Fast Learner
+            </div>
+
+            <div className="absolute bottom-4 left-4 right-4 bg-yellow-500 text-black px-4 py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 animate-pulse">
+               <div className="w-2 h-2 rounded-full bg-black"></div> Available for work
+            </div>
+           </div>
         </div>
 
         {/* Text Content Area */}
-        <div className="w-full md:w-2/3 flex flex-col justify-between relative pl-4 md:pl-6 border-l-2 border-black bg-gradient-to-r from-black/80 via-black/30 to-transparent p-5 md:p-6 rounded-r-2xl">
-          
-          {/* First Paragraph */}
-          <p>
-            I'm a web developer who enjoys building fast, scalable, and user-friendly applications using modern technologies and AI-assisted tools. I've worked on real-world projects, including a consulting platform for Zaalima Development pvt.ltd, where I focused on creating clean interfaces and implementing features that make the product more intuitive and efficient.
+        <div className="w-full md:w-2/3 flex flex-col justify-center pl-0 md:pl-8">
+          <p className="text-lg leading-relaxed text-gray-300 mb-6 border-l-4 border-yellow-500 pl-6">
+            I am a results-driven <strong>Full Stack Developer</strong> with hands-on real-time industry experience in building robust, scalable, and high-performance web applications. During my tenure at <strong>Zaalima Development Pvt. Ltd.</strong>, I played a key role in developing enterprise-grade solutions, including scalable real-time chat applications and comprehensive Library Management Systems.
           </p>
           
-          {/* Second Paragraph */}
-          <p className="mb-0">
-            I care about writing clean, maintainable code and paying attention to the details that improve performance and user experience. I approach problems with a practical mindset and enjoy turning ideas into reliable, well-crafted products. I'm always learning and exploring new tools and frameworks to keep improving and building better solutions, with a strong passion for leveraging AI, modern development practices, and creative problem-solving to deliver real value.
+          <p className="text-lg leading-relaxed text-gray-300 border-l-4 border-yellow-500/30 pl-6">
+            I care about writing clean, maintainable code and transforming complex business requirements into seamless, user-centric digital products. Whether it's optimizing database queries, building responsive front-end interfaces, or integrating secure back-end APIs, I approach every challenge with a problem-solving mindset and a passion for modern engineering standards.
           </p>
         </div>
 

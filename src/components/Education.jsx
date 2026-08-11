@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 export default function Education() {
-  const [zoomedIndex, setZoomedIndex] = useState(null);
-
-  const educationList = [
+  const educationData = [
     {
-      institution: "KGiSL Institute of Technology",
+      institution: "KGISL INSTITUTE OF TECHNOLOGY",
       degree: "Computer Applications | CGPA: 8.0 / 10",
       duration: "2021 - 2024",
       status: "COMPLETED",
@@ -14,85 +12,56 @@ export default function Education() {
       institution: "National Matric Hr. Sec. School",
       degree: "HSC (12th Grade) | 85%",
       duration: "2020 - 2021",
-      status: null,
+      status: "COMPLETED",
     },
     {
       institution: "National Matric Hr. Sec. School",
       degree: "SSLC (10th Grade) | 70%",
       duration: "2018 - 2019",
-      status: null,
+      status: "COMPLETED",
     },
   ];
 
-  // Click outside to zoom out / reset
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (!e.target.closest(".edu-card")) {
-        setZoomedIndex(null);
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
-
-  const handleCardClick = (index, e) => {
-    e.stopPropagation();
-    setZoomedIndex(zoomedIndex === index ? null : index);
-  };
-
   return (
-    <section className="py-20 px-4 max-w-5xl mx-auto text-white">
-      <div className="mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+    <section className="py-24 px-6 max-w-5xl mx-auto relative overflow-hidden text-white">
+      {/* Section Heading */}
+      <div className="mb-16 text-center">
+        <h2 className="text-3xl md:text-5xl font-extrabold tracking-wider uppercase text-transparent bg-clip-text bg-gradient-to-r from-white via-orange-100 to-orange-400">
           EDUCATION
         </h2>
-        <div className="w-20 h-1 bg-gray-500 mt-3"></div>
+        <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-white mx-auto mt-3 rounded-full"></div>
       </div>
 
-      <div className="relative border-l border-gray-700 ml-4 md:ml-6 space-y-8 pl-6 md:pl-8">
-        {educationList.map((edu, index) => {
-          const isZoomed = zoomedIndex === index;
-          return (
-            <div key={index} className="relative group">
-              {/* Timeline Dot */}
-              <div
-                className={`absolute -left-[35px] md:-left-[41px] top-6 w-3.5 h-3.5 rounded-full bg-[#121212] border-2 transition-colors ${isZoomed ? "border-gray-400 bg-gray-400" : "border-gray-600 group-hover:border-gray-400 group-hover:bg-gray-400"}`}
-              ></div>
+      {/* Timeline Container */}
+      <div className="relative border-l-2 border-white/20 ml-4 md:ml-32 space-y-10 pl-6 md:pl-10">
+        {educationData.map((edu, index) => (
+          <div key={index} className="relative group">
+            {/* Timeline Dot */}
+            <div className="absolute -left-[31px] md:-left-[47px] top-6 w-4 h-4 rounded-full bg-black border-2 border-orange-500 group-hover:bg-orange-500 transition-all duration-300 shadow-[0_0_10px_rgba(249,115,22,0.8)]"></div>
 
-              {/* Education Box with Gray Theme and Zoom In/Out */}
-              <div
-                onClick={(e) => handleCardClick(index, e)}
-                className={`edu-card bg-[#121212] border p-6 rounded-2xl backdrop-blur-xl relative cursor-pointer transition-all duration-500 ease-in-out ${
-                  isZoomed
-                    ? "scale-105 md:scale-110 border-gray-400 shadow-[0_0_30px_rgba(156,163,175,0.2)] z-20"
-                    : "border-gray-800 hover:border-gray-600 hover:shadow-[0_0_20px_rgba(156,163,175,0.1)]"
-                }`}
-              >
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
-                  <h3
-                    className={`text-xl font-bold transition-colors ${isZoomed ? "text-gray-200" : "text-gray-100 group-hover:text-gray-300"}`}
-                  >
-                    {edu.institution}
-                  </h3>
-                  <span className="text-gray-400 text-sm font-medium">
+            {/* Education Card */}
+            <div className="bg-[#0a0a0a]/90 border border-white/15 p-6 md:p-8 rounded-3xl backdrop-blur-xl shadow-[0_0_30px_rgba(0,0,0,0.8)] group-hover:border-orange-500/60 group-hover:shadow-[0_0_30px_rgba(249,115,22,0.2)] group-hover:-translate-y-1 transition-all duration-300">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+                <div>
+                  <span className="text-xs uppercase tracking-widest text-orange-400 font-semibold bg-orange-500/10 border border-orange-500/20 px-3 py-1 rounded-full">
                     {edu.duration}
                   </span>
+                  <h3 className="text-xl md:text-2xl font-bold text-white tracking-wide mt-3 group-hover:text-orange-300 transition-colors">
+                    {edu.institution}
+                  </h3>
                 </div>
 
-                <div className="flex flex-wrap items-center justify-between gap-4 mt-2">
-                  <p className="text-gray-300 text-sm md:text-base font-medium">
-                    {edu.degree}
-                  </p>
-                  {edu.status && (
-                    <span className="text-xs bg-gray-800 border border-gray-700 text-gray-300 px-3 py-1 rounded-full font-medium">
-                      {edu.status}
-                    </span>
-                  )}
-                </div>
+                <span className="text-xs font-bold tracking-wider px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-gray-300 group-hover:border-orange-500/30 group-hover:text-orange-200 transition-all">
+                  {edu.status}
+                </span>
               </div>
+
+              <p className="text-gray-300 text-sm md:text-base font-medium">
+                {edu.degree}
+              </p>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </section>
   );
