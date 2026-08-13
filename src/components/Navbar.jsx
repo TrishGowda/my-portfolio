@@ -27,10 +27,13 @@ export default function Navbar({ setCurrentView }) {
           >
             CONTACT
           </button>
+          
+          {/* Corrected Resume Link matching your file name */}
           <a 
-            href="/resume.pdf" 
+            href="/Full Stack Development-resume.pdf" 
             target="_blank" 
             rel="noreferrer"
+            download="Trisha_MS_Resume.pdf"
             className="px-6 py-2 rounded-full bg-white text-black hover:bg-gray-200 transition text-sm font-medium tracking-wider"
           >
             RESUME

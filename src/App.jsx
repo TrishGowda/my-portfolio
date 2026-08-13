@@ -22,6 +22,7 @@ export default function App() {
       <Navbar setCurrentView={setCurrentView} />
 
       <main>
+        {/* Home Page View */}
         {currentView === "home" && (
           <>
             <Hero />
@@ -72,10 +73,13 @@ export default function App() {
             <TechnicalSkills />
             <Education />
             <Certifications />
+
+            {/* Footer மூலமாக மட்டுமே 'Let's Talk' பக்கத்திற்கு செல்லும் வகையில் இணைக்கப்பட்டுள்ளது */}
             <Footer setCurrentView={setCurrentView} targetView="new-contact" />
           </>
         )}
 
+        {/* Inquiry Page View */}
         {currentView === "inquiry" && (
           <div className="min-h-screen py-24 px-6 max-w-6xl mx-auto relative z-10 text-white">
             <button
@@ -91,18 +95,15 @@ export default function App() {
           </div>
         )}
 
+        {/* Connect With Me Page View */}
         {currentView === "new-contact" && (
           <div className="min-h-screen py-24 px-6 max-w-6xl mx-auto relative z-10 text-white">
-            <button
-              onClick={() => {
+            <ConnectWithMe
+              onBack={() => {
                 setCurrentView("home");
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="mb-8 px-6 py-2.5 rounded-full border border-white/20 bg-white/10 hover:bg-white hover:text-black transition text-sm font-medium tracking-wider flex items-center gap-2 w-fit cursor-pointer"
-            >
-              ← Back to Portfolio
-            </button>
-            <ConnectWithMe />
+            />
           </div>
         )}
       </main>
